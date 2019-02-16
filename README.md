@@ -1,44 +1,40 @@
 # T-Pot 18.11
 
-T-Pot 18.11 runs on the latest 18.04.x LTS Ubuntu Server Network Installer image, is based on
+T-Pot 18.11基於[docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)且運行在最新版本的18.04.x LTS Ubuntu 
 
-[docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)
+Server上，以及如下所列之使用docker虛擬化的其他蜜罐
 
-and includes dockerized versions of the following honeypots
-
-* [adbhoney](https://github.com/huuck/ADBHoney),
-* [ciscoasa](https://github.com/Cymmetria/ciscoasa_honeypot),
-* [conpot](http://conpot.org/),
-* [cowrie](http://www.micheloosterhof.com/cowrie/),
-* [dionaea](https://github.com/DinoTools/dionaea),
-* [elasticpot](https://github.com/schmalle/ElasticPot),
-* [glastopf](http://mushmush.org/),
-* [glutton](https://github.com/mushorg/glutton),
-* [heralding](https://github.com/johnnykv/heralding),
-* [honeytrap](https://github.com/armedpot/honeytrap/),
-* [mailoney](https://github.com/awhitehatter/mailoney),
-* [medpot](https://github.com/schmalle/medpot),
-* [rdpy](https://github.com/citronneur/rdpy),
-* [snare](http://mushmush.org/),
+* [adbhoney](https://github.com/huuck/ADBHoney)
+* [ciscoasa](https://github.com/Cymmetria/ciscoasa_honeypot)
+* [conpot](http://mushmush.org/)
+* [glastopf](http://mushmush.org/)
+* [snare](http://mushmush.org/)
 * [tanner](http://mushmush.org/)
+* [cowrie](https://www.cowrie.org/)
+* [dionaea](https://github.com/DinoTools/dionaea)
+* [elasticpot]
+* [glutton](https://github.com/mushorg/glutton)
+* [heralding](https://github.com/johnnykv/heralding)
+* [honeytrap](https://github.com/armedpot/honeytrap/)
+* [mailoney](https://github.com/awhitehatter/mailoney)
+* [medpot](https://github.com/schmalle/medpot)
+* [rdpy](https://github.com/citronneur/rdpy)
+
+同時也使用了以下的工具
+
+* [Cockpit](https://cockpit-project.org/running) 針對docker、作業系統(os)、實時效能監控(real-time performance)及網頁終端(web terminal)的一個輕量化的網頁使用者介面(webui)。
+* [Cyberchef](https://gchq.github.io/CyberChef/) 一個用來加密、編碼、壓縮及資料分析的網頁應用程式。
+* [ELK stack](https://www.elastic.co/videos) 用來精美的視覺化T-POT所接收到的所有事件的工具。
+* [Elasticsearch Head](https://mobz.github.io/elasticsearch-head/) 用來瀏覽及與彈性搜索群集(Elastic Search cluster)互動的網頁前端。
+* [Spiderfoot](https://github.com/smicallef/spiderfoot) 一個開源的智能自動化工具。
+* [Suricata](http://suricata-ids.org/) 一個網路安全監控引擎。
 
 
-Furthermore we use the following tools
-
-* [Cockpit](https://cockpit-project.org/running) for a lightweight, webui for docker, os, real-time performance monitoring and web terminal.
-* [Cyberchef](https://gchq.github.io/CyberChef/) a web app for encryption, encoding, compression and data analysis.
-* [ELK stack](https://www.elastic.co/videos) to beautifully visualize all the events captured by T-Pot.
-* [Elasticsearch Head](https://mobz.github.io/elasticsearch-head/) a web front end for browsing and interacting with an Elastic Search cluster.
-* [Spiderfoot](https://github.com/smicallef/spiderfoot) a open source intelligence automation tool.
-* [Suricata](http://suricata-ids.org/) a Network Security Monitoring engine.
-
-
-# TL;DR
-1. Meet the [system requirements](#requirements). The T-Pot installation needs at least 6-8 GB RAM and 128 GB free disk space as well as a working internet connection.
-2. Download the T-Pot ISO from [GitHub](https://github.com/dtag-dev-sec/tpotce/releases) or [create it yourself](#createiso).
-3. Install the system in a [VM](#vm) or on [physical hardware](#hw) with [internet access](#placement).
-4. Enjoy your favorite beverage - [watch](https://sicherheitstacho.eu) and [analyze](#kibana).
-
+# 長話短說(TL;DR-Too Long, Don't Read)
+1. 請參照[系統需求](#requirements). 安裝T-Pot需要至少6-8GB RAM、128GB硬碟空間 以及 可用的網路連線。
+2. 您也可以從 [GitHub](https://github.com/dtag-dev-sec/tpotce/releases) 下載T-Pot.iso檔 或是 [自己創建](#createiso)一個T-Pot.iso檔。
+3. 安裝T-Pot在[虛擬機(VM)](#vm)上 或是 透過[網路存取(internet access)](#placement)在[物理硬件(physical hardware)](#hw)上安裝T-Pot。
+4. 享受你最愛的飲料開始使用吧 - [觀察(watch)](https://sicherheitstacho.eu) 與 [分析(analyze)](#kibana)。
 
 # Table of Contents
 - [Changelog](#changelog)
